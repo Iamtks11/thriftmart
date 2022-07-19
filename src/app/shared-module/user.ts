@@ -11,3 +11,10 @@ export const EmptyUser: User = {
     email: "?",
     password: ","
 }
+
+export interface signupData {
+  name: string,
+  email: string,
+  gender: string,
+  password: string,
+}

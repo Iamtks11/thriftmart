@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../authentication.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-fixed-navbar',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FixedNavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _authService: AuthenticationService) { }
+
+  userName:string = this._authService.getName();
 
   ngOnInit(): void {
+  }
+
+  isAuthenticated(){
+    return this._authService.isAuthenticated();
+  }
+
+  logOut(){
+    this._authService.logOut();
   }
 
 }

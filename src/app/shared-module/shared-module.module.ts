@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FixedNavbarComponent } from './fixed-navbar/fixed-navbar.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -9,7 +10,8 @@ import { FixedNavbarComponent } from './fixed-navbar/fixed-navbar.component';
     FixedNavbarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     FixedNavbarComponent

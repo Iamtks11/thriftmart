@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User,EmptyUser } from './user';
+import { User, EmptyUser, signupData } from './user';
 import UsersData from './users.json';
 
 @Injectable({
@@ -38,8 +38,15 @@ export class AuthenticationService {
     return false;
   }
 
-  
-  
+  logOut(){
+    this._auth = false;
+  }
+
+  registerUser(data: signupData){
+    console.log(data);
+  }
+
+
 
 
   constructor() {  }

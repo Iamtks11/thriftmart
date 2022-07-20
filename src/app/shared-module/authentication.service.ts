@@ -10,8 +10,9 @@ export class AuthenticationService {
   private _user: User = EmptyUser;
   private _users = UsersData;
 
+  constructor() {}
+
   printUsers() {
-    console.log(this._users);
   }
 
   isAuthenticated() {
@@ -41,8 +42,7 @@ export class AuthenticationService {
   }
 
   registerUser(data: signupData) {
-    console.log(data);
   }
 
-  constructor() {}
+
 }

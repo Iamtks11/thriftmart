@@ -3,24 +3,30 @@
     <a class="navbar-brand" routerLink="">ThriftMart</a>
 
     <div *ngIf="isAuthenticated()">
-      <li class="nav-item dropdown" (click)="toggle()">
+      <div class="dropdown">
         <a
-          class="nav-link dropdown-toggle d-flex align-items-center"
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
           href="#"
-          id="navbarDropdownMenuLink"
+          id="navbarDropdownMenuAvatar"
           role="button"
           data-mdb-toggle="dropdown"
           aria-expanded="false"
+          [class.show]="isVisible"
+          (click)="toggle()"
         >
           <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
             class="rounded-circle"
-            height="22"
-            alt="Portrait of a Woman"
+            height="25"
+            alt="Black and White Portrait of a Man"
             loading="lazy"
           />
         </a>
-        <ul class="dropdown-menu" [class.show]="isVisible"  aria-labelledby="navbarDropdownMenuLink">
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+          [class.show]="isVisible"
+        >
           <li>
             <a class="dropdown-item" href="#">My profile</a>
           </li>
@@ -31,7 +37,7 @@
             <a class="dropdown-item" href="#">Logout</a>
           </li>
         </ul>
-      </li>
+      </div>
     </div>
 
 

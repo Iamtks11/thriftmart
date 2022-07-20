@@ -9,7 +9,6 @@ export class DataService {
   constructor() { }
 
   getPosts(){
-    console.log(this._posts);
     return this._posts;
   }
 }

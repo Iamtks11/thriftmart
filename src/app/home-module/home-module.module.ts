@@ -6,6 +6,7 @@ import { BannerComponent } from './banner/banner.component';
 import { PostsContainerComponent } from './posts-container/posts-container.component';
 import { FooterComponent } from './footer/footer.component';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
+import { PostsModuleModule } from '../posts-module/posts-module.module';
 
 
 
@@ -19,7 +20,8 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
   ],
   imports: [
     CommonModule,
-    SharedModuleModule
+    SharedModuleModule,
+    PostsModuleModule
   ],
   exports: [
     HomeModuleComponent,

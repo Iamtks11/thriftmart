@@ -1,0 +1,14 @@
+<div class="card">
+  <img src="{{post.image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <h5 class="card-title">{{post.title}}</h5>
+      <div>{{post.price}}₹</div>
+    </div>
+
+    <p class="card-text">{{post.description}}</p>
+  </div>
+  <div class="card-footer">
+    <small class="text-muted">{{post.date | date}}</small>
+  </div>
+</div>

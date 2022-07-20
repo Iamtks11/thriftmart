@@ -3,34 +3,32 @@ import { User, EmptyUser, signupData } from './user';
 import UsersData from './users.json';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthenticationService {
-
   private _auth: Boolean = false;
   private _user: User = EmptyUser;
   private _users = UsersData;
 
-  printUsers(){
+  printUsers() {
     console.log(this._users);
   }
 
-  isAuthenticated(){
+  isAuthenticated() {
     return this._auth;
   }
 
-  getName(){
+  getName() {
     return this._user.name;
   }
 
   //pass only email and password
-  authenticate(user:User)
-  {
-    let currentUser = this._users.find((obj)=>{
-      return obj.email==user.email
+  authenticate(user: User) {
+    let currentUser = this._users.find((obj) => {
+      return obj.email == user.email;
     });
 
-    if(currentUser && currentUser.password==user.password){
+    if (currentUser && currentUser.password == user.password) {
       this._auth = true;
       this._user = currentUser;
       return true;
@@ -38,16 +36,13 @@ export class AuthenticationService {
     return false;
   }
 
-  logOut(){
+  logOut() {
     this._auth = false;
   }
 
-  registerUser(data: signupData){
+  registerUser(data: signupData) {
     console.log(data);
   }
 
-
-
-
-  constructor() {  }
+  constructor() {}
 }

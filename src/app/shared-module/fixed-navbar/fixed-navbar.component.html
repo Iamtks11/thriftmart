@@ -3,7 +3,7 @@
     <a class="navbar-brand" routerLink="">ThriftMart</a>
 
     <div *ngIf="isAuthenticated()">
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown" (click)="toggle()">
         <a
           class="nav-link dropdown-toggle d-flex align-items-center"
           href="#"
@@ -20,7 +20,7 @@
             loading="lazy"
           />
         </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <ul class="dropdown-menu" [class.show]="isVisible"  aria-labelledby="navbarDropdownMenuLink">
           <li>
             <a class="dropdown-item" href="#">My profile</a>
           </li>

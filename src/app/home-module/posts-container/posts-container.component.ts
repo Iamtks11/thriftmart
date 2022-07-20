@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../shared-module/data.service';
+
 
 @Component({
   selector: 'app-posts-container',
@@ -7,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsContainerComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private _dataService: DataService) { }
+  posts = this._dataService.getPosts();
   ngOnInit(): void {
   }
 

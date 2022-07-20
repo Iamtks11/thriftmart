@@ -9,12 +9,18 @@ import { User } from '../user';
 })
 export class FixedNavbarComponent implements OnInit {
 
+  isVisible = false;
   constructor(private _authService: AuthenticationService) { }
 
   userName:string = this._authService.getName();
 
   ngOnInit(): void {
   }
+
+  toggle(){
+    this.isVisible = !this.isVisible;
+  }
+
 
   isAuthenticated(){
     return this._authService.isAuthenticated();

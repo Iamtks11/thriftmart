@@ -1,0 +1,101 @@
+<div id="home">
+  <!-- Section: Design Block -->
+  <section class="container mt-4">
+      <!-- Jumbotron -->
+      <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+          <div class="container">
+              <div class="row gx-lg-5 align-items-center">
+                  <div class="col-lg-6 mb-5 mb-lg-0">
+                      <h1 class="my-5 display-5 fw-bold ls-tight">
+                          Buying and Selling <br/>Used Goods <br />
+                          <span class="text-primary">Was Never So Easy!</span>
+                      </h1>
+                      <!-- <p style="color: hsl(217, 10%, 50.8%)">
+                          Join us now to buy or sell used goods in a very convenient way in your locality
+                      </p> -->
+                  </div>
+
+                  <div class="col-lg-6 mb-5 mb-lg-0">
+                      <div class="card">
+                          <div class="card-body py-5 px-md-5">
+                              <form #login="ngForm" (ngSubmit)="onSubmit()">
+                                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                                  <div class="row">
+                                      <div class="col-md-6 mb-4">
+                                          <div class="form-outline">
+                                              <input type="text" id="form3Example1" name="firstName" class="form-control" required [(ngModel)]="firstName"  />
+                                              <label class="form-label" for="form3Example1">First name</label>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-6 mb-4">
+                                          <div class="form-outline">
+                                              <input type="text" id="form3Example2" name="lastName" class="form-control" [(ngModel)]="lastName" />
+                                              <label class="form-label" for="form3Example2">Last name</label>
+                                          </div>
+                                      </div>
+                                  </div>
+
+                                  <!-- Email input -->
+                                  <div class="form-outline mb-4">
+                                      <input type="email" id="form3Example3" name="email" class="form-control" required [(ngModel)]="email"  />
+                                      <label class="form-label" for="form3Example3">Email address</label>
+                                  </div>
+
+                                  <div class="col-md-8 mb-4">
+
+                                    <label class="mr-2 mb-2 pb-2">Gender: </label>
+
+                                    <div class="form-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="gender" id="maleGender"
+                                        value="male" checked  [(ngModel)]="gender">
+                                      <label class="form-check-label" for="maleGender">Male</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="gender" id="femaleGender"
+                                        value="female" [(ngModel)]="gender" />
+                                      <label class="form-check-label" for="femaleGender">Female</label>
+                                    </div>
+
+
+                                    <div class="form-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="gender" id="otherGender"
+                                        value="other" [(ngModel)]="gender" />
+                                      <label class="form-check-label" for="otherGender">Other</label>
+                                    </div>
+
+                                  </div>
+
+                                  <!-- Password input -->
+                                  <div class="form-outline mb-4">
+                                      <input type="password" id="form3Example4" name="password" class="form-control" required [(ngModel)]="password"   />
+                                      <label class="form-label" for="form3Example4">Password</label>
+                                  </div>
+
+                                  <!-- Confirm Password -->
+
+                                  <div class="form-outline mb-4">
+                                    <input type="password" id="form3Example4" name="confirmPassword" class="form-control" required [(ngModel)]="confirmPassword" />
+                                    <label class="form-label" for="form3Example4">Confirm Password</label>
+                                  </div>
+
+
+                                  <!-- Submit button -->
+                                  <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!login.valid">
+                                      Sign up
+                                  </button>
+
+                                  <!-- Register buttons -->
+
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->
+
+</div>

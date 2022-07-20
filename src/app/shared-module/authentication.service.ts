@@ -24,12 +24,12 @@ export class AuthenticationService {
   }
 
   //pass only email and password
-  authenticate(user: User) {
+  authenticate(email:string, password: string) {
     let currentUser = this._users.find((obj) => {
-      return obj.email == user.email;
+      return obj.email == email;
     });
 
-    if (currentUser && currentUser.password == user.password) {
+    if (currentUser && currentUser.password == password) {
       this._auth = true;
       this._user = currentUser;
       return true;

@@ -8,7 +8,6 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 
-console.log('users module loaded');
 @NgModule({
   declarations: [
     UsersModuleComponent,

@@ -1,0 +1,11 @@
+#body{
+  background-color: #508bfc;
+  min-height: 91vh;
+}
+.form-label{
+  text-align: left;
+}
+
+.link{
+  text-decoration: none;
+}

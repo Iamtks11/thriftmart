@@ -24,6 +24,10 @@ img {
       -ms-flex-positive: 1;
           flex-grow: 1; }
 
+#card-box{
+  margin-top: 6%;
+}
+
 .preview-thumbnail.nav-tabs {
   border: none;
   margin-top: 15px; }

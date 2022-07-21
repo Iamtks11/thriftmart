@@ -11,12 +11,25 @@ import { EmptyUserCardData } from '../../../../assets/models/user';
   styleUrls: ['./post-details.component.css'],
 })
 export class PostDetailsComponent implements OnInit {
+
+  post: Post = EmptyPost;
+  postUser: userCardData = EmptyUserCardData;
+  name: string = '';
+  email: string = '';
+  phone: number;
+  message: string = '';
+
+
   constructor(
     private _data: DataService,
     private _route: ActivatedRoute,
     private _router: Router
   ) {
     this.phone = NaN;
+  }
+
+  ngOnInit(): void {
+
     let query = this._route.snapshot.paramMap.get('id');
 
     let postId = Number(query);
@@ -27,12 +40,9 @@ export class PostDetailsComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
 
-  post: Post = EmptyPost;
-  postUser: userCardData = EmptyUserCardData;
-  name: string = '';
-  email: string = '';
-  phone: number;
-  message: string = '';
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+}
 }

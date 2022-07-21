@@ -1,13 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="">ThriftMart</a>
+    <a class="navbar-brand" routerLink="" id="navbar-title">ThriftMart</a>
 
     <div *ngIf="isAuthenticated()">
-      <button class="button-29" role="button">Sell</button>
+      <a id="mybutton" class="btn btn-primary" routerLink="/posts/create" role="button" >+SELL</a>
       <div class="dropdown inline">
         <a
           class="dropdown-toggle d-flex align-items-center hidden-arrow"
-          href="#"
           id="navbarDropdownMenuAvatar"
           role="button"
           data-mdb-toggle="dropdown"
@@ -32,9 +31,6 @@
             <a class="dropdown-item" href="#">My profile</a>
           </li>
           <li>
-            <a class="dropdown-item" href="#">Settings</a>
-          </li>
-          <li>
             <a class="dropdown-item" href="#" (click)="logOut()">Logout</a>
           </li>
         </ul>
@@ -43,7 +39,7 @@
 
 
     <div *ngIf="!isAuthenticated()">
-      <button class="button-29" role="button">Sell</button>
+      <a class="button-29" routerLink="/posts/create" role="button" >+SELL</a>
       <a class="btn btn-sm btn-outline-secondary mx-4" routerLink="/users/signin" type="button">Sign In</a>
     </div>
   </div>

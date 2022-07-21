@@ -7,13 +7,15 @@ import { PostDetailsComponent } from './components/post-details/post-details.com
 import { PostsModuleComponent } from './posts-module.component';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { FormsModule } from '@angular/forms';
+import { PostCreateComponent } from './components/post-create/post-create.component';
 
 
 @NgModule({
   declarations: [
     PostCardComponent,
     PostDetailsComponent,
-    PostsModuleComponent
+    PostsModuleComponent,
+    PostCreateComponent
   ],
   imports: [
     CommonModule,

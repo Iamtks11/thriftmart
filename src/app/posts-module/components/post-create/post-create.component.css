@@ -1,0 +1,10 @@
+#container-body{
+  height: 91vh;
+}
+
+#form-card{
+
+  max-width: 600px;
+  margin: auto;
+  margin-top: 8%;
+}

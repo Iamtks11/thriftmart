@@ -1,0 +1,33 @@
+<div class="container" id="container-body">
+  <div class="card" id="form-card">
+    <div class="card-body">
+      <p class="h4">Add a product</p>
+      <form #form="ngForm" (ngSubmit)="addProduct()">
+        <!-- Name input -->
+        <div class="form-outline mb-4">
+          <input type="text" id="form4Example1" name="title" class="form-control" [(ngModel)]="title" required/>
+          <label class="form-label" for="form4Example1"  >Title</label>
+        </div>
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input type="number" id="form4Example2" name="price" class="form-control" [(ngModel)]="price" required/>
+          <label class="form-label" for="form4Example2"  >Price</label>
+        </div>
+
+        <!-- Message input -->
+        <div class="form-outline mb-4">
+          <textarea class="form-control" id="form4Example3" rows="4" name="description" [(ngModel)]="description" required></textarea>
+          <label class="form-label" for="form4Example3" name="description">Description</label>
+        </div>
+
+        <!-- Checkbox -->
+
+
+        <!-- Submit button -->
+        <button type="submit" [disabled]="!form.valid" class="btn btn-primary btn-block mb-4">+Add</button>
+      </form>
+    </div>
+  </div>
+
+</div>

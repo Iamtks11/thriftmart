@@ -1,8 +1,13 @@
-<div class="row row-cols-2 row-cols-md-4 g-4 p-2" id="post-container">
+
+<div class="container mt-4">
+  <p class="h4">Recently Posted</p>
+  <div class="row row-cols-2 row-cols-md-4 g-4 p-2" id="post-container">
 
 
-  <app-post-card *ngFor="let post of posts" [post]="post" (click)="sendToDetails(post)">
-  </app-post-card>
+    <app-post-card *ngFor="let post of posts" [post]="post" (click)="sendToDetails(post)">
+    </app-post-card>
 
+
+  </div>
 
 </div>

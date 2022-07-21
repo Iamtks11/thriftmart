@@ -16,7 +16,7 @@ export class AuthenticationService {
     let lsAuth = localStorage.getItem('auth');
     if(lsAuth)
     {
-      this._auth = Boolean(lsAuth);
+      this._auth = (lsAuth=="true");
     }
     else{
       this._auth = false;
@@ -43,6 +43,10 @@ export class AuthenticationService {
     return this._user.name;
   }
 
+  getUserId(){
+    return this._user.id;
+  }
+
   //pass only email and password
   authenticate(email:string, password: string) {
     let currentUser = this._users.find((obj) => {
@@ -54,7 +58,7 @@ export class AuthenticationService {
       this._user = currentUser;
 
       //saving session to local storage
-      localStorage.setItem('auth', String(this._auth));
+      localStorage.setItem('auth', this._auth.toString());
       localStorage.setItem('user', JSON.stringify(this._user))
       return true;
     }
@@ -63,10 +67,20 @@ export class AuthenticationService {
 
   logOut() {
     this._auth = false;
-    localStorage.setItem('auth', String(this._auth));
+    localStorage.setItem('auth', this._auth.toString());
   }
 
   registerUser(data: signupData) {
+    let userId = this._users.length;
+    const user: User = {
+      id: userId,
+      name: data.name,
+      email: data.email,
+      password: data.password,
+      avatar: "https://xsgames.co/randomusers/avatar.php?g=pixel"
+    }
+    this._users.push(user);
+    localStorage.setItem('users', JSON.stringify('users'));
   }
 
 

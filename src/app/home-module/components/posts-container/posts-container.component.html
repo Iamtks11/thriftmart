@@ -4,7 +4,7 @@
   <div class="row row-cols-2 row-cols-md-4 g-4 p-2" id="post-container">
 
 
-    <app-post-card *ngFor="let post of posts" [post]="post" (click)="sendToDetails(post)">
+    <app-post-card *ngFor="let post of (posts | filter)" [post]="post" (click)="sendToDetails(post)">
     </app-post-card>
 
 

@@ -8,6 +8,7 @@ import { PostsModuleComponent } from './posts-module.component';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { FormsModule } from '@angular/forms';
 import { PostCreateComponent } from './components/post-create/post-create.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PostCreateComponent } from './components/post-create/post-create.compon
     PostCardComponent,
     PostDetailsComponent,
     PostsModuleComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { PostCreateComponent } from './components/post-create/post-create.compon
     SharedModuleModule
   ],
   exports: [
-    PostCardComponent
+    PostCardComponent,
+    FilterPipe
   ]
 })
 export class PostsModuleModule { }

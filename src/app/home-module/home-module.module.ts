@@ -16,7 +16,7 @@ import { PostsModuleModule } from '../posts-module/posts-module.module';
     HomeNavbarComponent,
     BannerComponent,
     PostsContainerComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     CommonModule,

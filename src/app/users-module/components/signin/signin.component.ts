@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../../shared-module/authentication.service';
+import { AuthenticationService } from '../../../shared-module/services/authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class SigninComponent implements OnInit {
   email: string='';
   password: string='';
   invalid: boolean = false;
-  constructor(private _authService: AuthenticationService, private _routerService: Router) { 
+  constructor(private _authService: AuthenticationService, private _routerService: Router) {
 
   }
 
@@ -20,14 +20,8 @@ export class SigninComponent implements OnInit {
   }
 
   authenticate(){
-    let user={
-      id: 0,
-      name: "",
-      email: this.email.toLowerCase(),
-      password: this.password
-    }
 
-    if(this._authService.authenticate(user))
+    if(this._authService.authenticate(this.email.toLowerCase(), this.password))
     {
       console.log("Sign in successful");
       this._routerService.navigate(['']);

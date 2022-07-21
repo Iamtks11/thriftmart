@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Post, EmptyPost } from '../../shared-module/post';
+import { Post, EmptyPost } from '../../../../assets/models/post';
 
 @Component({
   selector: 'app-post-card',

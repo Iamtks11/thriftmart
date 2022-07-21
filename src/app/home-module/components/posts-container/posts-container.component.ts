@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../shared-module/data.service';
-import { Post } from '../../shared-module/post';
+import { DataService } from '../../../shared-module/services/data.service';
+import { Post } from '../../../../assets/models/post';
 import { Router } from '@angular/router';
-import { userCardData } from '../../shared-module/user';
+import { userCardData } from '../../../../assets/models/user';
 
 
 @Component({
@@ -20,16 +20,16 @@ export class PostsContainerComponent implements OnInit {
   sendToDetails(post: Post)
   {
     this._dataService.post = post;
-    const user_id = post.user_id;
-    const user = this._dataService.getUserById(user_id);
+    const userId = post.userId;
+    const user = this._dataService.getUserById(userId);
     if(user)
     {
-      const post_user: userCardData = {
+      const postUser: userCardData = {
         name: user.name,
         email: user.email,
         avatar: user.avatar
       }
-      this._dataService.post_user = post_user;
+      this._dataService.postUser = postUser;
       this._router.navigate(['posts/details']);
     }
   }

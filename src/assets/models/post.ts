@@ -5,7 +5,7 @@ export interface Post {
   description: string,
   image: string,
   date: string,
-  user_id: number
+  userId: number
 }
 
 export const EmptyPost: Post = {
@@ -15,5 +15,5 @@ export const EmptyPost: Post = {
   description: '',
   image: '',
   date: '',
-  user_id: 0
+  userId: 0
 }

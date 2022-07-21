@@ -56,12 +56,12 @@
           <div class="card mb-3" id="user-card" style="max-width: 450px;">
             <div class="row no-gutters">
               <div class="col-md-4" id="user-img-container">
-                <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" id="user-img" class="card-img" alt="User image">
+                <img src="{{postUser.avatar}}" id="user-img" class="card-img" alt="User image">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">{{post_user.name}}</h5>
-                  <p class="card-text">{{post_user.email}}</p>
+                  <h5 class="card-title">{{postUser.name}}</h5>
+                  <p class="card-text">{{postUser.email}}</p>
                 </div>
               </div>
             </div>
@@ -89,7 +89,7 @@
       class="text-center border border-light p-5"
       action="#!"
       id="contact-form"
-
+      #form="ngForm"
     >
       <p class="h4 mb-4">Contact with Seller</p>
 
@@ -140,7 +140,7 @@
       </div>
 
       <!-- Send button -->
-      <button class="btn btn-secondary btn-lg" type="submit">
+      <button class="btn btn-secondary btn-lg" type="submit" [disabled]="!form.valid">
         Send Message
       </button>
     </form>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../shared-module/data.service';
+import { DataService } from '../../../shared-module/services/data.service';
 
 @Component({
   selector: 'app-post-details',
@@ -15,7 +15,7 @@ export class PostDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
   post = this._data.post;
-  post_user = this._data.post_user;
+  postUser = this._data.postUser;
   name: string = '';
   email: string = '';
   phone: number;

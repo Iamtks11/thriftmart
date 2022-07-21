@@ -1,3 +1,8 @@
 .profileDetails{
   right: 10%;
 }
+
+#navbar{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgba(0, 0, 0, 0.23) 0px 1px 4px;
+  background-image: linear-gradient(to top, #e3e3e3 0%, #f2deff 100%)
+}

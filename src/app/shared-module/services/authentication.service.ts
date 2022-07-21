@@ -6,13 +6,33 @@ import UsersData from '../../../assets/data/users.json';
   providedIn: 'root',
 })
 export class AuthenticationService {
-  private _auth: Boolean = false;
-  private _user: User = EmptyUser;
+  private _auth: Boolean;
+  private _user: User;
   private _users = UsersData;
 
-  constructor() {}
+  constructor() {
 
-  printUsers() {
+    //fetching auth variable from local storage
+    let lsAuth = localStorage.getItem('auth');
+    if(lsAuth)
+    {
+      this._auth = Boolean(lsAuth);
+    }
+    else{
+      this._auth = false;
+    }
+
+    //fetching users data from local storage
+    let lsUser = localStorage.getItem('user');
+    if(lsUser)
+    {
+      this._user = JSON.parse(lsUser);
+    }
+    else{
+      this._user = EmptyUser;
+    }
+
+
   }
 
   isAuthenticated() {
@@ -32,6 +52,10 @@ export class AuthenticationService {
     if (currentUser && currentUser.password == password) {
       this._auth = true;
       this._user = currentUser;
+
+      //saving session to local storage
+      localStorage.setItem('auth', String(this._auth));
+      localStorage.setItem('user', JSON.stringify(this._user))
       return true;
     }
     return false;
@@ -39,6 +63,7 @@ export class AuthenticationService {
 
   logOut() {
     this._auth = false;
+    localStorage.setItem('auth', String(this._auth));
   }
 
   registerUser(data: signupData) {
